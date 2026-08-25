@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+
+    <title>やりますねぇ！</title>
+
+    <!-- Xに表示するカード -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="やりますねぇ！">
+    <meta name="twitter:description" content="やりますねぇ！">
+
+    <!-- ↓あとで自分の画像URLに変更 -->
+    <meta name="twitter:image"
+          content="https://YOURNAME.github.io/yaju-share/yaju.jpg">
+
+    <!-- OGP -->
+    <meta property="og:title" content="やりますねぇ！">
+    <meta property="og:description" content="やりますねぇ！">
+    <meta property="og:image"
+          content="https://YOURNAME.github.io/yaju-share/yaju.jpg">
+    <meta property="og:type" content="website">
+
+    <style>
+        body {
+            margin: 0;
+            min-height: 100vh;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            background: #111;
+            color: white;
+
+            font-family: sans-serif;
+            text-align: center;
+        }
+
+        img {
+            max-width: 90%;
+            max-height: 65vh;
+            object-fit: contain;
+        }
+
+        button {
+            margin-top: 25px;
+
+            padding: 16px 30px;
+
+            font-size: 20px;
+            font-weight: bold;
+
+            border: none;
+            border-radius: 12px;
+
+            cursor: pointer;
+        }
+
+        button:hover {
+            opacity: 0.85;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- 野獣先輩の画像 -->
+    <img src="yaju.jpg" alt="野獣先輩">
+
+    <!-- これが拡散ボタン -->
+    <button onclick="postToX()">
+        やりますねぇ！をポストする
+    </button>
+
+    <script>
+        function postToX() {
+
+            // このページ自身のURL
+            const url = window.location.href;
+
+            // Xに入れる文章
+            const text = "やりますねぇ！";
+
+            // X投稿画面
+            const x =
+                "https://x.com/intent/post" +
+                "?text=" + encodeURIComponent(text) +
+                "&url=" + encodeURIComponent(url);
+
+            // Xへ移動
+            window.location.href = x;
+        }
+    </script>
+
+</body>
+</html>
